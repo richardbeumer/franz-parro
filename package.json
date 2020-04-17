@@ -1,0 +1,14 @@
+{
+  "id": "parro",
+  "name": "Parro",
+  "version": "1.0.0",
+  "description": "Parro",
+  "main": "index.js",
+  "author": "Richard Beumer <richard@wilmar.nl>",
+  "license": "MIT",
+  "config": {
+    "serviceURL": "https://talk.parro.com/",
+    "hasDirectMessages": true,
+    "hasNotificationSound": true
+  }
+}
