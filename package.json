@@ -6,6 +6,7 @@
   "main": "index.js",
   "author": "Richard Beumer <richard@wilmar.nl>",
   "license": "MIT",
+  "repository": "https://github.com/richardbeumer/franz-parro",
   "config": {
     "serviceURL": "https://talk.parro.com/",
     "hasDirectMessages": true,

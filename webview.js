@@ -1,25 +1,17 @@
-'use strict';
-
-const path = require('path');
-
-module.exports = Franz => {
-  const getMessages = function getMessages() {
-    let count = 0;
-    const searchElement = document.querySelector('.im_dialogs_search_field');
-    if (searchElement && searchElement.value === '') {
-      const elements = document.querySelectorAll('.im_dialog_badge:not(.ng-hide):not(.im_dialog_badge_muted)');
-      if (elements) {
-        for (let i = 0; i < elements.length; i += 1) {
-          if (elements[i].innerHTML !== 0) {
-            count += 1;
-          }
-        }
-      }
+// orat.io integration
+module.exports = (Franz) => {
+  function getMessages() {
+    let direct = 0;
+    let indirect = 0;
+    const FranzData = document.querySelector('#FranzMessages').dataset;
+    if (FranzData) {
+      direct = FranzData.direct;
+      indirect = FranzData.indirect;
     }
 
-    Franz.setBadge(count);
-  };
+    Franz.setBadge(direct, indirect);
+  }
 
-  Franz.injectCSS(path.join(__dirname, 'service.css'));
+  Franz.injectCSS(path.join(__dirname, 'darkmode.css'));
   Franz.loop(getMessages);
-};
+}
